@@ -351,7 +351,7 @@
 			"items": {
 				"$ref": "Disks.json#/definitions/AdminDisk"
 			}
-        },
+        }
     },
     "parameters": {
         "MigrationJobStatusParameter": {
@@ -379,7 +379,7 @@
             "x-ms-parameter-location": "method"
         },
         "AdminDiskListParameter": {
-			"description": "The parameters of admin disk list.",
+            "description": "The parameters of admin disk list.",
             "name": "disks",
             "in": "body",
             "required": true,
