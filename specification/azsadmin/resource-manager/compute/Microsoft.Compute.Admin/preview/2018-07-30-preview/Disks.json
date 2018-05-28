@@ -291,17 +291,7 @@
             "in": "path",
             "required": true,
             "x-ms-parameter-location": "method"
-        },
-		"AdminDiskListParameter": {
-			"description": "The parameters of admin disk list.",
-            "name": "disks",
-            "in": "body",
-            "required": true,
-            "schema": {
-                "$ref": "Disks.json#/definitions/AdminDiskList"
-            },
-            "x-ms-parameter-location": "method"
-		}
+        }
     },
     "securityDefinitions": {
         "azure_auth": {

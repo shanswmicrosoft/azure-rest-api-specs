@@ -344,7 +344,14 @@
                     "type": "string"
                 }
             }
-        }
+        },
+        "AdminDiskListInput": {
+            "type": "array",
+            "description": "List of disks.",
+			"items": {
+				"$ref": "Disks.json#/definitions/AdminDisk"
+			}
+        },
     },
     "parameters": {
         "MigrationJobStatusParameter": {
@@ -370,7 +377,17 @@
             "required": true,
             "type": "string",
             "x-ms-parameter-location": "method"
-        }
+        },
+        "AdminDiskListParameter": {
+			"description": "The parameters of admin disk list.",
+            "name": "disks",
+            "in": "body",
+            "required": true,
+            "schema": {
+                "$ref": "DiskMigrations.json#/definitions/AdminDiskListInput"
+            },
+            "x-ms-parameter-location": "method"
+		}
     },
     "securityDefinitions": {
         "azure_auth": {
