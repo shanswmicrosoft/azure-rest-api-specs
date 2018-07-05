@@ -115,7 +115,7 @@
                         "$ref": "DiskMigrations.json#/parameters/TargetShareParameter"
                     },
 					{
-                        "$ref": "Disks.json#/parameters/AdminDiskListParameter"
+                        "$ref": "DiskMigrations.json#/parameters/AdminDiskListParameter"
                     },
                     {
                         "$ref": "Disks.json#/parameters/ApiVersionParameter"
