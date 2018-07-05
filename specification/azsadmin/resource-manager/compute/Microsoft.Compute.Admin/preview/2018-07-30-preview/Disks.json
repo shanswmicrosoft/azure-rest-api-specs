@@ -123,27 +123,27 @@
                     "description": "The actual size of disks",
                     "type": "integer",
                     "format": "int64",
-                    "readOnly": true
+                    "readOnly": false
                 },
                 "managedBy": {
                     "description": "Compute resource Uri which owns this disk.",
                     "type": "string",
-                    "readOnly": true
+                    "readOnly": false
                 },
                 "tenantId": {
                     "description": "The disk resource Uri from tenant view.",
                     "type": "string",
-                    "readOnly": true
+                    "readOnly": false
                 },
                 "resourceType": {
                     "description": "The type of the resource.",
                     "$ref": "Disks.json#/definitions/DiskResourceType",
-                    "readOnly": true
+                    "readOnly": false
                 },
                 "diskSku": {
                     "description": "the disk sku.",
                     "$ref": "Disks.json#/definitions/AccountType",
-                    "readOnly": true
+                    "readOnly": false
                 }
             }
         },
