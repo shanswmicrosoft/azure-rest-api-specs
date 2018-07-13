@@ -57,7 +57,7 @@
                     "type": "string"
                 },
                 "name": {
-                    "readOnly": false,
+                    "readOnly": true,
                     "description": "Name of the resource.",
                     "type": "string"
                 },

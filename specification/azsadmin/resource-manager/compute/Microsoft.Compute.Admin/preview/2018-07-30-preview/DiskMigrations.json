@@ -55,7 +55,7 @@
         }
       }
     },
-    "/subscriptions/{subscriptionId}/providers/Microsoft.Compute.Admin/locations/{location}/diskmigrations/{diskMigrationJobName}": {
+    "/subscriptions/{subscriptionId}/providers/Microsoft.Compute.Admin/locations/{location}/diskmigrations/{migrationId}": {
       "get": {
         "x-ms-examples": {
           "Returns the requested disk migration job.": {
@@ -75,7 +75,7 @@
             "$ref": "../2015-12-01-preview/Compute.json#/parameters/LocationParameter"
           },
           {
-            "$ref": "DiskMigrations.json#/parameters/DiskMigrationJobNameParameter"
+            "$ref": "DiskMigrations.json#/parameters/MigrationIdParameter"
           },
           {
             "$ref": "Disks.json#/parameters/ApiVersionParameter"
@@ -109,13 +109,13 @@
             "$ref": "../2015-12-01-preview/Compute.json#/parameters/LocationParameter"
           },
           {
-            "$ref": "DiskMigrations.json#/parameters/DiskMigrationJobNameParameter"
+            "$ref": "DiskMigrations.json#/parameters/MigrationIdParameter"
           },
           {
             "$ref": "DiskMigrations.json#/parameters/TargetShareParameter"
           },
           {
-            "$ref": "DiskMigrations.json#/parameters/AdminDiskListParameter"
+            "$ref": "DiskMigrations.json#/parameters/DiskListParameter"
           },
           {
             "$ref": "Disks.json#/parameters/ApiVersionParameter"
@@ -131,7 +131,7 @@
         }
       }
     },
-    "/subscriptions/{subscriptionId}/providers/Microsoft.Compute.Admin/locations/{location}/diskmigrations/{diskMigrationJobName}/Cancel": {
+    "/subscriptions/{subscriptionId}/providers/Microsoft.Compute.Admin/locations/{location}/diskmigrations/{migrationId}/Cancel": {
       "post": {
         "x-ms-examples": {
           "Cancel a disk migration job.": {
@@ -151,7 +151,7 @@
             "$ref": "../2015-12-01-preview/Compute.json#/parameters/LocationParameter"
           },
           {
-            "$ref": "DiskMigrations.json#/parameters/DiskMigrationJobNameParameter"
+            "$ref": "DiskMigrations.json#/parameters/MigrationIdParameter"
           },
           {
             "$ref": "Disks.json#/parameters/ApiVersionParameter"
@@ -240,7 +240,7 @@
         },
         "targetDiskStateForMigration": {
           "description": "The disk status.",
-          "$ref": "Disks.json#/definitions/AdminDiskState",
+          "$ref": "Disks.json#/definitions/DiskState",
           "readOnly": true
         },
         "diskId": {
@@ -277,6 +277,11 @@
       "description": "Disk migration job properties.",
       "type": "object",
       "properties": {
+        "migrationId": {
+          "description": "The disk migration id.",
+          "type": "string",
+          "readOnly": false
+        },
         "status": {
           "description": "The current status of disk migration job.",
           "$ref": "DiskMigrations.json#/definitions/MigrationJobStatus",
@@ -345,11 +350,11 @@
         }
       }
     },
-    "AdminDiskListInput": {
+    "DiskListInput": {
       "type": "array",
       "description": "List of disks.",
       "items": {
-        "$ref": "Disks.json#/definitions/AdminDisk"
+        "$ref": "Disks.json#/definitions/Disk"
       }
     }
   },
@@ -362,9 +367,9 @@
       "type": "string",
       "x-ms-parameter-location": "method"
     },
-    "DiskMigrationJobNameParameter": {
+    "MigrationIdParameter": {
       "description": "The migration job guid name.",
-      "name": "diskMigrationJobName",
+      "name": "migrationId",
       "in": "path",
       "required": true,
       "type": "string",
@@ -378,13 +383,13 @@
       "type": "string",
       "x-ms-parameter-location": "method"
     },
-    "AdminDiskListParameter": {
-      "description": "The parameters of admin disk list.",
+    "DiskListParameter": {
+      "description": "The parameters of disk list.",
       "name": "disks",
       "in": "body",
       "required": true,
       "schema": {
-        "$ref": "DiskMigrations.json#/definitions/AdminDiskListInput"
+        "$ref": "DiskMigrations.json#/definitions/DiskListInput"
       },
       "x-ms-parameter-location": "method"
     }
