@@ -19,7 +19,7 @@
        "/subscriptions/{subscriptionId}/providers/Microsoft.Compute.Admin/locations/{location}/admindisks": {
             "get": {
                 "x-ms-examples": {
-                    "Returns a list of disk.": {
+                    "Returns a list of disks.": {
                         "$ref": "./examples/Disks/List.json"
                     }
                 },
@@ -120,7 +120,7 @@
                     "readOnly": false
                 },
                 "actualSize": {
-                    "description": "The actual size of disks",
+                    "description": "The actual size of disk.",
                     "type": "integer",
                     "format": "int64",
                     "readOnly": false
@@ -154,7 +154,7 @@
                 "properties": {
                     "x-ms-client-flatten": true,
                     "$ref": "Disks.json#/definitions/AdminDiskProperties",
-                    "description": "Disk properties"
+                    "description": "Disk properties."
                 }
             },
             "allOf": [
@@ -233,66 +233,66 @@
             }
         }
     },
-    "parameters": {
-	        "ApiVersionParameter": {
-            "name": "api-version",
-            "in": "query",
-            "description": "Client API Version.",
-            "required": true,
-            "type": "string",
-            "default": "2018-07-30-preview"
-        },
-        "TenantSubscriptionIdParameter": {
-            "description": "Tenant Subscription Id which the resource belongs to.",
-            "name": "tenantSubscriptionId",
-            "type": "string",
-            "in": "query",
-            "required": false,
-            "x-ms-parameter-location": "method"
-        },
-		"AdminDiskStateParameter": {
-            "description": "The parameters of disk state.",
-            "name": "status",
-            "in": "query",
-            "required": false,
-            "type": "string",
-            "x-ms-parameter-location": "method"
-		},
-		"SourceSharePathParameter": {
-		    "description": "The source share which the resource belongs to.",
-            "name": "sharePath",
-            "in": "query",
-            "required": false,
-            "type": "string",
-            "x-ms-parameter-location": "method"
-        },
-		"DiskCountParameter": {
-		    "description": "The maximum number of disks.",
-            "name": "count",
-            "in": "query",
-            "type": "integer",
-            "format": "int32",
-            "required": false,
-            "x-ms-parameter-location": "method"
-		},
-		"DiskStartParameter": {
-		    "description": "The start index of disks.",
-            "name": "start",
-            "in": "query",
-            "type": "integer",
-            "format": "int32",
-            "required": false,
-            "x-ms-parameter-location": "method"
-		},
-        "AdminDiskGuidParameter": {
-            "description": "The disk guid as identity.",
-            "name": "adminDiskGuid",
-            "type": "string",
-            "in": "path",
-            "required": true,
-            "x-ms-parameter-location": "method"
-        }
+  "parameters": {
+    "ApiVersionParameter": {
+      "name": "api-version",
+      "in": "query",
+      "description": "Client API Version.",
+      "required": true,
+      "type": "string",
+      "default": "2018-07-30-preview"
     },
+    "TenantSubscriptionIdParameter": {
+      "description": "Tenant Subscription Id which the resource belongs to.",
+      "name": "tenantSubscriptionId",
+      "type": "string",
+      "in": "query",
+      "required": false,
+      "x-ms-parameter-location": "method"
+    },
+    "AdminDiskStateParameter": {
+      "description": "The parameters of disk state.",
+      "name": "status",
+      "in": "query",
+      "required": false,
+      "type": "string",
+      "x-ms-parameter-location": "method"
+    },
+    "SourceSharePathParameter": {
+      "description": "The source share which the resource belongs to.",
+      "name": "sharePath",
+      "in": "query",
+      "required": false,
+      "type": "string",
+      "x-ms-parameter-location": "method"
+    },
+    "DiskCountParameter": {
+      "description": "The maximum number of disks to return.",
+      "name": "count",
+      "in": "query",
+      "type": "integer",
+      "format": "int32",
+      "required": false,
+      "x-ms-parameter-location": "method"
+    },
+    "DiskStartParameter": {
+      "description": "The start index of disks in query.",
+      "name": "start",
+      "in": "query",
+      "type": "integer",
+      "format": "int32",
+      "required": false,
+      "x-ms-parameter-location": "method"
+    },
+    "AdminDiskGuidParameter": {
+      "description": "The disk guid as identity.",
+      "name": "adminDiskGuid",
+      "type": "string",
+      "in": "path",
+      "required": true,
+      "x-ms-parameter-location": "method"
+    }
+  },
     "securityDefinitions": {
         "azure_auth": {
             "type": "oauth2",
