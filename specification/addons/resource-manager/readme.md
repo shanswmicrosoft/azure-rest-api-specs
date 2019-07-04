@@ -5,7 +5,6 @@
 This is the AutoRest configuration file for Addons RP.
 
 
-adsf
 
 ---
 ## Getting Started 
